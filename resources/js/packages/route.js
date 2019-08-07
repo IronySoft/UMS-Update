@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 //Component
 import Department from "../components/admin/department/Department";
+import TeacherIndex from "../components/admin/Teacher/Index";
 import Course from "../components/admin/Course/Course";
 import ExampleComponent from "../components/ExampleComponent";
 Vue.use(VueRouter);
@@ -18,6 +19,12 @@ export default new VueRouter({
         {
             path: '/course',
             component: Course
+
+        },
+        {
+            path: '/teacher-index',
+            name:'teacher.index',
+            component: TeacherIndex
 
         },
 

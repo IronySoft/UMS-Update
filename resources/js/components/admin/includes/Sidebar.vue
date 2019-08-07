@@ -45,33 +45,14 @@
                             </p>
                         </router-link>
                     </li>
-
-
-
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-dashboard"></i>
+                    <li class="nav-item">
+                        <router-link :to="{name:'teacher.index'}" class="nav-link">
+                            <i class="nav-icon fa fa-book"></i>
                             <p>
                                 Teacher
-                                <i class="right fa fa-angle-left"></i>
                             </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Save Teacher</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Manage Teacher</p>
-                                </a>
-                            </li>
-                        </ul>
+                        </router-link>
                     </li>
-
 
                     <li class="nav-item">
                         <router-link :to="{path:'/example'}" class="nav-link">

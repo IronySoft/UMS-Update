@@ -1,5 +1,5 @@
 require('./bootstrap');
-window.Vue = require('vue');
+import Vue from 'vue'
 import vuetify from './packages/vuetify'
 //Vue-Router
 import router from './packages/route'
@@ -9,6 +9,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('my-navbar', require('./components/admin/includes/Navbar').default);
 Vue.component('my-sidebar', require('./components/admin/includes/Sidebar').default);
 Vue.component('my-footer', require('./components/admin/includes/Footer').default);
+
+var bus = new Vue()
+Vue.prototype.$bus = bus
 
 
 const app = new Vue({
