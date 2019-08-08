@@ -63,6 +63,18 @@
                             </p>
                         </router-link>
                     </li>
+                    <li class="nav-item">
+                        <form @submit="logout">
+                            <button type="submit" class="nav-link">
+                                <i class="nav-icon fa fa-th"></i>
+                                <p>
+                                   Logout
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </button>
+                        </form>
+
+                    </li>
 
 
                 </ul>
@@ -74,6 +86,7 @@
 </template>
 
 <script>
+
     export default {
         name: "Sidebar",
 
@@ -84,17 +97,21 @@
         },
 
         mounted() {
-
-            //Auth-User-Name
             axios.get('/auth-user-name').then((response) => {
                 this.authUserName = response.data
-            })
-                .catch((error) => {
+            }).catch((error) => {
                     console.log(error)
                 })
         },
-
-
+        methods:{
+            logout(){
+               this.$axios.post('logout').then(function (res) {
+                   alert('Ho')
+               }).catch((error) => {
+                    console.log(error)
+                })
+            }
+        }
     }
 </script>
 

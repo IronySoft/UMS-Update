@@ -11,31 +11,34 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini">
 <div id="app">
-    <div class="wrapper">
 
+    @guest
+        <my-login></my-login>
+    @endguest
+
+    @if(\Illuminate\Support\Facades\Auth::guard('web'))
         <!-- Navbar -->
-        <my-navbar></my-navbar>
+            <my-navbar></my-navbar>
+
+            <!-- Main Sidebar Container -->
+            <my-sidebar></my-sidebar>
+
+            <!-- Content-->
+            <div class="content-wrapper">
+
+                <router-view></router-view>
+
+            </div>
+            <!--Footer -->
+            <my-footer></my-footer>
+    @endif
 
 
-
-        <!-- Main Sidebar Container -->
-      <my-sidebar></my-sidebar>
-
-        <!-- Content-->
-        <div class="content-wrapper">
-
-            <router-view></router-view>
-
-        </div>
-
-        <!--Footer -->
-        <my-footer></my-footer>
-
-    </div>
 </div>
 
 <!-- Scripts -->
