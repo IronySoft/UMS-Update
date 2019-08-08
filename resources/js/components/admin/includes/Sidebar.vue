@@ -69,7 +69,6 @@
                                 <i class="nav-icon fa fa-th"></i>
                                 <p>
                                    Logout
-                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </button>
                         </form>

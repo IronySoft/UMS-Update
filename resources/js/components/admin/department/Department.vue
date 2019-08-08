@@ -81,19 +81,19 @@
                     </div>
 
 
-                    <form action="" method="post">
+                    <form @submit.prevent="create">
 
                         <!--Body-->
                         <div class="modal-body">
 
                             <div class="form-group row ">
                                 <label class="col-sm-3">Code</label>
-                                <input class="form-control col-sm-8 " name="code" type="text">
+                                <input v-model="department.code" class="form-control col-sm-8 " name="code" type="text">
                             </div>
 
                             <div class="form-group row ">
                                 <label class="col-sm-3">Name</label>
-                                <input class="form-control col-sm-8 " name="name" type="text">
+                                <input v-model="department.name" class="form-control col-sm-8 " name="name" type="text">
                             </div>
 
                         </div>
@@ -112,8 +112,6 @@
         </div>
 
     </div>
-
-
 </template>
 
 <script>
@@ -122,7 +120,11 @@
 
         data() {
             return {
-                editMode: ''
+                editMode: '',
+                department:{
+                    name:'',
+                    code:'',
+                }
             }
         },
 
@@ -137,6 +139,10 @@
                 this.editMode = true;
 
                 $('#departmentModal').modal('show')
+            },
+            create(){
+                $('#departmentModal').modal('hide')
+                console.log(this.department)
             }
         }
     }

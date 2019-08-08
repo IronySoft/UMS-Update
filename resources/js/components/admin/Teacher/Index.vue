@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
     <v-app>
         <div class="container">
             <div class="row justify-content-center">
@@ -31,7 +31,7 @@
                                                         <v-layout wrap>
 
                                                             <v-flex xs12>
-                                                                <v-text-field v-model="teacher.name" label="Name*"
+                                                                <v-text-field v-model="teacher.name" label="Name"
                                                                               hint="Give Full Name of Teacher"
                                                                               :rules="nameRules"
                                                                               required>
@@ -41,14 +41,14 @@
                                                             </v-flex>
                                                             <v-flex xs12>
                                                                 <v-text-field :rules="nameRules"
-                                                                              v-model="teacher.address" label="Address*"
+                                                                              v-model="teacher.address" label="Address"
                                                                               hint="Give a valid Address" required>
 
                                                                 </v-text-field>
                                                                 {{teacher.address}}
                                                             </v-flex>
                                                             <v-flex xs12>
-                                                                <v-text-field v-model="teacher.email" label="Email*"
+                                                                <v-text-field v-model="teacher.email" label="Email"
                                                                               hint="Give a valid email"
                                                                               :rules="emailRules"
                                                                               required>
@@ -59,7 +59,7 @@
                                                             <v-flex xs12>
                                                                 <v-text-field :rules="nameRules"
                                                                               v-model="teacher.contact_number"
-                                                                              label="Contact Number*"
+                                                                              label="Contact Number"
                                                                               hint="Give a valid Contact Number"
                                                                               required>
 
@@ -72,7 +72,7 @@
                                                                         :rules="nameRules"
                                                                         v-model="teacher.department_id"
                                                                         :items="departments"
-                                                                        label="Department*"
+                                                                        label="Department"
                                                                         item-text="name"
                                                                         item-value="id"
                                                                         required
@@ -94,7 +94,7 @@
 
                                                             <v-flex xs12>
                                                                 <v-text-field :rules="nameRules"
-                                                                              v-model="teacher.credit" label="Credit*"
+                                                                              v-model="teacher.credit" label="Credit"
                                                                               hint="Credit should be minimum 5 and Maximum 30"
                                                                               required>
 
@@ -103,7 +103,6 @@
                                                             </v-flex>
                                                         </v-layout>
                                                     </v-container>
-                                                    <small>*indicates required field</small>
                                                 </v-card-text>
 
                                                 <v-card-actions>
